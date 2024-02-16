@@ -11,6 +11,11 @@ public class Mole : MonoBehaviour{
     private float secsTillDespawn = 10f;//60fps
     private float timerCount = 0f;
 
+    void Start(){
+        //Has theprogram look for the fist object with this component
+        //scoreManager = gameObject.GetComponent<ScoreManager>();
+    }
+
     //This update is used to count the seconds of how long this mole is around
     void FixedUpdate(){
         //Adds a second to timerCount
