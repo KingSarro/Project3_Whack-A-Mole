@@ -8,7 +8,7 @@ public class MoleSpawner : MonoBehaviour{
     //Gets a ference to the object I want to use as the parent objects (MoleSpawner Canvas)
     [SerializeField] GameObject parentObject;
     //Initalized variables to hold the height and width of the canvas
-    float parRectHeight, parRecWidth;
+    float rectHeight, rectWidth;
 
     // Start is called before the first frame update//Vars used to keep track when to spawn the next mole
     [SerializeField] private float secsTillSpawn = 5f;
@@ -16,8 +16,8 @@ public class MoleSpawner : MonoBehaviour{
 
     void Start(){
         //Gets the heigh and width of the RectTransform
-        parRectHeight = GetComponent<RectTransform>().rect.height;
-        parRecWidth = GetComponent<RectTransform>().rect.width;
+        rectHeight = GetComponent<RectTransform>().rect.height;
+        rectWidth = GetComponent<RectTransform>().rect.width;
         //Calls the spawnMole function
         spawnMole();
     }
@@ -37,9 +37,9 @@ public class MoleSpawner : MonoBehaviour{
         }//closes timer check
     }//closes fixedUpdate
 
-    float getRanNum(int heightOrWidth){
+    float getRanNum(int widthOrHeight){
         //Gets a random number for the height or width of the object
-        float r = (heightOrWidth == 1) ? Random.Range(0, parRectHeight/2.5f): Random.Range(0,parRecWidth/2.5f);
+        float r = (widthOrHeight == 1) ? Random.Range(0, rectWidth): Random.Range(0,rectHeight);
         //return r
         return r;
     }
